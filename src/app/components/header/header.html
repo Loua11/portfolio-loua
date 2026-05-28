@@ -1,0 +1,60 @@
+<header class="header" [class.scrolled]="isScrolled()">
+  <div class="container header-container">
+
+    <!-- Logo -->
+    <a class="logo" (click)="scrollTo('hero')">
+      <span class="logo-text">LJ</span>
+      <span class="logo-dot">.</span>
+    </a>
+
+    <!-- Menu desktop -->
+    <nav class="nav" [class.open]="isMenuOpen()">
+      <a class="nav-link" (click)="scrollTo('about')">{{ 'nav.about' | translate }}</a>
+      <a class="nav-link" (click)="scrollTo('skills')">{{ 'nav.skills' | translate }}</a>
+      <a class="nav-link" (click)="scrollTo('education')">{{ 'nav.education' | translate }}</a>
+      <a class="nav-link" (click)="scrollTo('experience')">{{ 'nav.experience' | translate }}</a>   
+      <a class="nav-link" (click)="scrollTo('projects')">{{ 'nav.projects' | translate }}</a>
+      <a class="nav-link" (click)="scrollTo('contact')">{{ 'nav.contact' | translate }}</a>
+    </nav>
+
+    <!-- Actions -->
+    <div class="actions">
+
+      <!-- Sélecteur de langue -->
+      <div class="lang-selector">
+        <button class="lang-btn" (click)="toggleLangDropdown($event)">
+          <span class="flag">{{ currentLanguage?.flag }}</span>
+          <span class="lang-code">{{ currentLangCode.toUpperCase() }}</span>
+          <span class="arrow" [class.open]="isLangDropdownOpen()">▾</span>
+        </button>
+
+        @if (isLangDropdownOpen()) {
+          <div class="lang-dropdown">
+            @for (lang of translationService.availableLanguages; track lang.code) {
+              <button
+                class="lang-option"
+                [class.active]="lang.code === currentLangCode"
+                (click)="switchLanguage(lang.code, $event)">
+                <span class="flag">{{ lang.flag }}</span>
+                <span>{{ lang.label }}</span>
+              </button>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Bouton CV -->
+<a href="cv/CV-Loua-Jday.pdf" download="CV-Loua-Jday.pdf" class="btn-cv">
+          <i class="fas fa-download"></i>
+        <span>{{ 'nav.downloadCV' | translate }}</span>
+      </a>
+
+      <!-- Burger menu (mobile) -->
+      <button class="burger" (click)="toggleMenu()" [class.open]="isMenuOpen()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

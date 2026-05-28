@@ -1,0 +1,232 @@
+{
+  "nav": {
+    "about": "Über mich",
+    "skills": "Kompetenzen",
+    "education": "Ausbildung",
+      "experience": "Berufserfahrung",
+
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "downloadCV": "Lebenslauf"
+  },
+"hero": {
+  "greeting": "Hallo, ich bin",
+  "name": "Loua Jday",
+  "title": "Software-Ingenieurin",
+  "subtitle": "Webentwicklung & DevOps",
+  "description": "Diplom-Informatikingenieurin von ESPRIT 🎓, derzeit im Freemover-Programm an der Philipps-Universität Marburg 🇩🇪. Begeistert von Java, Spring Boot, Angular und CI/CD, suche ich aktiv eine Stelle als Softwareentwicklerin und bin bundesweit umzugsbereit.",
+  "viewProjects": "Meine Projekte ansehen",
+  "contactMe": "Kontaktieren",
+  "available": "🟢 Sofort verfügbar • Bundesweit umzugsbereit",
+  "scroll": "Scrollen"
+},
+  "about": {
+    "title": "Über mich",
+    "sectionNumber": "01",
+    "tabs": {
+      "presentation": "Vorstellung",
+      "languages": "Sprachen",
+      "softSkills": "Soft Skills",
+      "certifications": "Zertifikate"
+    },
+    "presentation": "Diplom-Software-Ingenieurin von ESPRIT mit Leidenschaft für Webentwicklung und DevOps. Derzeit im Freemover-Programm an der Philipps-Universität Marburg (Deutschland) beherrsche ich Java, Spring Boot, Angular und CI/CD-Tools. Ernsthaft, motiviert und teamfähig — sofort verfügbar für eine Stelle in Deutschland.",
+    "info": {
+  "location": "Standort",
+  "locationValue": "Marburg, Deutschland",
+  "status": "Status",
+  "statusValue": "Diplom-Ingenieurin • Verfügbar",
+  "experience": "Erfahrung",
+  "experienceValue": "5+ Jahre",
+  "email": "E-Mail"
+},
+    "languagesList": {
+      "arabic": "Arabisch",
+      "arabicLevel": "Muttersprache",
+      "french": "Französisch",
+      "frenchLevel": "TCF zertifiziert",
+      "english": "Englisch",
+      "englishLevel": "Fließend",
+      "german": "Deutsch",
+      "germanLevel": "Im Lernen"
+    },
+    "softSkillsList": {
+      "teamwork": "Teamarbeit",
+      "teamworkDesc": "Hervorragende Zusammenarbeit und Kommunikation",
+      "motivation": "Motivation",
+      "motivationDesc": "Ernsthaft, motiviert und effizient",
+      "curiosity": "Neugier",
+      "curiosityDesc": "Immer am Lernen neuer Technologien",
+      "problemSolving": "Problemlösung",
+      "problemSolvingDesc": "Analytischer und kreativer Ansatz",
+      "multicultural": "Multikulturell",
+      "multiculturalDesc": "Erfahrung in Tunesien & Deutschland",
+      "timeManagement": "Zeitmanagement",
+      "timeManagementDesc": "Einhaltung von Fristen und Prioritäten"
+    },
+    "certificationsList": {
+      "sdg": "SDG-Zertifikat",
+      "sdgIssuer": "Coursera",
+      "sdgDate": "Dezember 2024",
+      "commercial": "Handelsvertreter",
+      "commercialIssuer": "LinkedIn Learning",
+      "commercialDate": "Juni 2022",
+      "tcf": "TCF Französisch",
+      "tcfIssuer": "France Éducation",
+      "tcfDate": "Februar 2022"
+    }
+  },
+ "skills": {
+  "title": "Skills",
+  "sectionNumber": "02",
+    "hint": "Bewegen Sie den Mauszeiger über eine Fähigkeit, um das Niveau zu sehen",
+
+  "backend": "Backend",
+  "frontend": "Frontend",
+  "devops": "DevOps",
+  "database": "Databases",
+  "blockchain": "Blockchain",
+  "tools": "Tools & Methoden"
+},
+  "education": {
+    "title": "Ausbildung & Studium",
+    "sectionNumber": "03",
+    "current": "Aktuell",
+    "marburg": {
+      "title": "Ingenieurzyklus — Akademische Mobilität",
+      "school": "Philipps-Universität Marburg",
+      "location": "Marburg, Deutschland",
+      "period": "Okt. 2025 — Sept. 2026",
+      "description": "Freemover-Programm — Spezialisierung in Softwareentwicklung und verteilten Systemen."
+    },
+    "esprit": {
+      "title": "Ingenieurstudium in Informatik",
+      "school": "ESPRIT — Private Hochschule für Ingenieurwesen",
+      "location": "Ariana, Tunesien",
+      "period": "Sept. 2022 — Dez. 2025",
+      "description": "Softwareentwicklung — DevOps, Full-Stack-Webentwicklung, Blockchain, Microservices-Architektur."
+    },
+    "iset": {
+      "title": "Höherer Techniker in industrieller Informatik",
+      "school": "Höheres Institut für Technologische Studien",
+      "location": "Nabeul, Tunesien",
+      "period": "Sept. 2015 — Juni 2018",
+      "description": "Technische Ausbildung in industrieller Informatik, Automatisierung und Überwachung."
+    }
+  },
+  "experience": {
+  "title": "Berufserfahrung",
+  "sectionNumber": "04",
+  "achievementsLabel": "Wichtigste Erfolge",
+  "techsLabel": "Verwendete Technologien",
+  "md": {
+    "title": "Full-Stack-Webentwicklerin",
+    "company": "MD-Unternehmen",
+    "location": "Tunis, Tunesien",
+    "period": "Januar 2019 — Januar 2022 • 3 Jahre",
+    "description": "Entwicklung von Full-Stack-Webanwendungen in der IT-Abteilung von MD-Unternehmen: Konzeption, Implementierung und Optimierung von Business-Plattformen für interne Teams.",
+    "achievements": [
+      "Konzeption und Entwicklung mehrerer Business-Webanwendungen mit Java/Spring Boot und Angular",
+      "Implementierung sicherer REST-APIs mit Swagger-Dokumentation",
+      "Leistungsoptimierung und Refactoring bestehender Module",
+      "Zusammenarbeit mit Produktteams und Teilnahme an Code-Reviews"
+    ]
+  }
+},
+ "projects": {
+  "title": "Projekte",
+  "sectionNumber": "05",
+  "hint": "Klicken Sie auf ein Projekt für mehr Informationen",
+  "viewProject": "Projekt ansehen",
+  "viewMore": "Mehr ansehen",
+  "filters": {
+    "all": "Alle",
+    "professional": "Beruflich",
+    "academic": "Akademisch",
+    "personal": "Persönlich"
+  },
+  "categories": {
+    "pro": "Beruf",
+    "academic": "Akademisch",
+    "personal": "Persönlich"
+  },
+  "buttons": {
+    "viewVideo": "Video ansehen",
+    "viewImages": "Bilder",
+    "viewMedia": "Medien"
+  },
+  "modal": {
+    "description": "Beschreibung",
+    "technologies": "Verwendete Technologien"
+  },
+  "empty": "Noch keine Projekte in dieser Kategorie.",
+  "docchain": {
+    "title": "DocChain",
+    "description": "Ethereum-basierte Blockchain-Lösung: Entwicklung sicherer Smart Contracts, Angular-Frontend und Spring Boot-Backend, DevOps-Ansatz.",
+    "period": "März — Nov. 2025"
+  },
+  "kaddem": {
+    "title": "DevOps-Infrastruktur — KADDEM",
+    "description": "Aufbau einer kompletten CI/CD-Pipeline mit Integration von Jenkins, SonarQube, Nexus, Docker Hub, Grafana und Prometheus.",
+    "period": "Sept. — Nov. 2024"
+  },
+  "courzelo": {
+    "title": "COURZELO",
+    "description": "Komplette Online-Lernplattform mit Kursverwaltung, Benutzern und Fortschrittsverfolgung.",
+    "period": "Jan. — Mai 2024"
+  },
+  "agroeasy": {
+    "title": "AgroEasy",
+    "description": "Web- (Symfony), Mobile- und Desktop-Anwendung für die Verwaltung und Überwachung landwirtschaftlicher Kulturen mit Echtzeit-Dashboards.",
+    "period": "Jan. — Mai 2023"
+  },
+  "ecommerce": {
+    "title": "E-Commerce-Website",
+    "description": "Entwicklung einer kompletten E-Commerce-Website mit Symfony 5: Warenkorb, Bezahlung, Produkt- und Benutzerverwaltung.",
+    "period": "Sommer 2024"
+  },
+  "mobility": {
+    "title": "Internationale Mobilität — ESPRIT",
+    "description": "Website für internationale Mobilität: Benutzerverwaltung, Suche und Filterung von Möglichkeiten, automatisierte Anmeldungen.",
+    "period": "Sommer 2023"
+  },
+  "supervision": {
+    "title": "Automatisierte Überwachung",
+    "description": "Abschlussprojekt mit TIA Portal: Automatisiertes Überwachungssystem für Produktionsmaschinen, Optimierung und Fehlerreduzierung.",
+    "period": "Febr. — Juni 2018"
+  },
+  "md": {
+    "title": "Webanwendungen — MD-Unternehmen",
+    "description": "Full-Stack-Webanwendungsentwicklung mit Spring Boot und Angular: Konzeption, Implementierung und Optimierung.",
+    "period": "2019 — 2022"
+  }
+},
+  "contact": {
+    "title": "Kontakt",
+    "sectionNumber": "06",
+    "subtitle": "Ein Projekt? Auf der Suche nach Talenten? Einfach Hallo sagen?",
+    "name": "Name",
+    "namePlaceholder": "Ihr Name",
+    "email": "Ihre E-Mail",
+    "emailPlaceholder": "beispiel@email.com",
+    "subject": "Betreff",
+    "subjectPlaceholder": "Betreff der Nachricht",
+    "message": "Nachricht",
+    "messagePlaceholder": "Ihre Nachricht...",
+    "send": "Senden",
+    "sending": "Wird gesendet...",
+    "success": "Nachricht erfolgreich gesendet!",
+    "error": "Bitte E-Mail und Nachricht ausfüllen",
+    "info": {
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "location": "Standort",
+      "locationValue": "Marburg, Deutschland"
+    }
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten",
+    "tagline": "Software-Ingenieurin mit Leidenschaft für Webentwicklung & DevOps",
+    "madeWith": "Entworfen mit",
+    "in": "in Marburg"
+  }
+}

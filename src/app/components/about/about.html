@@ -1,0 +1,98 @@
+<section class="about-section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-subtitle">01 — {{ 'about.title' | translate }}</span>
+      <h2 class="section-title">{{ 'about.title' | translate }}</h2>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab" [class.active]="activeTab() === 'presentation'" (click)="setTab('presentation')">
+        <span class="tab-icon">👋</span>
+        {{ 'about.tabs.presentation' | translate }}
+      </button>
+      <button class="tab" [class.active]="activeTab() === 'languages'" (click)="setTab('languages')">
+        <span class="tab-icon">🌍</span>
+        {{ 'about.tabs.languages' | translate }}
+      </button>
+      <button class="tab" [class.active]="activeTab() === 'softSkills'" (click)="setTab('softSkills')">
+        <span class="tab-icon">💡</span>
+        {{ 'about.tabs.softSkills' | translate }}
+      </button>
+      <button class="tab" [class.active]="activeTab() === 'certifications'" (click)="setTab('certifications')">
+        <span class="tab-icon">🏆</span>
+        {{ 'about.tabs.certifications' | translate }}
+      </button>
+    </div>
+
+    <!-- Contenu des tabs -->
+    <div class="tab-content">
+
+      <!-- Présentation -->
+      <div *ngIf="activeTab() === 'presentation'" class="presentation-content">
+        <p class="presentation-text">{{ 'about.presentation' | translate }}</p>
+        <div class="info-grid">
+          <div class="info-card">
+            <span class="info-icon">📍</span>
+            <span class="info-label">{{ 'about.info.location' | translate }}</span>
+            <span class="info-value">{{ 'about.info.locationValue' | translate }}</span>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">🎓</span>
+            <span class="info-label">{{ 'about.info.status' | translate }}</span>
+            <span class="info-value">{{ 'about.info.statusValue' | translate }}</span>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">💼</span>
+            <span class="info-label">{{ 'about.info.experience' | translate }}</span>
+            <span class="info-value">{{ 'about.info.experienceValue' | translate }}</span>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">📧</span>
+            <span class="info-label">{{ 'about.info.email' | translate }}</span>
+            <span class="info-value">loua.jday&#64;gmail.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Langues -->
+      <div *ngIf="activeTab() === 'languages'" class="languages-grid">
+        <div *ngFor="let lang of languages" class="language-card">
+          <div class="language-header">
+            <span class="language-flag">{{ lang.flag }}</span>
+            <div>
+              <h3 class="language-name">{{ lang.nameKey | translate }}</h3>
+              <span class="language-level">{{ lang.levelKey | translate }}</span>
+            </div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" [style.width.%]="lang.percentage"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div *ngIf="activeTab() === 'softSkills'" class="soft-skills-grid">
+        <div *ngFor="let skill of softSkills" class="soft-skill-card">
+          <span class="soft-skill-icon">{{ skill.icon }}</span>
+          <h3 class="soft-skill-title">{{ skill.titleKey | translate }}</h3>
+          <p class="soft-skill-desc">{{ skill.descKey | translate }}</p>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div *ngIf="activeTab() === 'certifications'" class="certifications-grid">
+        <div *ngFor="let cert of certifications" class="cert-card">
+          <span class="cert-icon">{{ cert.icon }}</span>
+          <div class="cert-info">
+            <h3 class="cert-title">{{ cert.titleKey | translate }}</h3>
+            <p class="cert-issuer">{{ cert.issuerKey | translate }}</p>
+            <span class="cert-date">{{ cert.dateKey | translate }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

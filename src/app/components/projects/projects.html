@@ -1,0 +1,153 @@
+<section class="projects-section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-subtitle">{{ 'projects.sectionNumber' | translate }} — {{ 'projects.title' | translate }}</span>
+      <h2 class="section-title">{{ 'projects.title' | translate }}</h2>
+      <p class="section-hint">💡 Cliquez sur un projet pour en savoir plus</p>
+    </div>
+
+    <!-- Filtres -->
+    <div class="filters">
+      <button class="filter-btn" [class.active]="activeFilter() === 'all'" (click)="setFilter('all')">
+        {{ 'projects.filters.all' | translate }} <span class="count">{{ countByCategory('all') }}</span>
+      </button>
+      <button class="filter-btn" [class.active]="activeFilter() === 'professional'" (click)="setFilter('professional')">
+        💼 {{ 'projects.filters.professional' | translate }} <span class="count">{{ countByCategory('professional') }}</span>
+      </button>
+      <button class="filter-btn" [class.active]="activeFilter() === 'academic'" (click)="setFilter('academic')">
+        🎓 {{ 'projects.filters.academic' | translate }} <span class="count">{{ countByCategory('academic') }}</span>
+      </button>
+      <button class="filter-btn" [class.active]="activeFilter() === 'personal'" (click)="setFilter('personal')">
+        ✨ {{ 'projects.filters.personal' | translate }} <span class="count">{{ countByCategory('personal') }}</span>
+      </button>
+    </div>
+
+    <!-- Cards -->
+    <div class="projects-grid">
+      <div *ngFor="let project of filteredProjects()"
+           class="project-card"
+           [attr.data-color]="project.color"
+           (click)="openProject(project)">
+
+        <div class="project-header">
+          <span class="project-icon">{{ project.icon }}</span>
+          <span class="project-period">{{ project.periodKey | translate }}</span>
+        </div>
+
+        <h3 class="project-title">{{ project.titleKey | translate }}</h3>
+        <p class="project-description">{{ project.descriptionKey | translate }}</p>
+
+        <div class="project-tags">
+          <span *ngFor="let tag of project.tags" class="tag">{{ tag }}</span>
+        </div>
+
+        <div class="project-footer">
+          <span class="project-category" [attr.data-cat]="project.category">
+            <span *ngIf="project.category === 'professional'">💼 {{ 'projects.categories.pro' | translate }}</span>
+            <span *ngIf="project.category === 'academic'">🎓 {{ 'projects.categories.academic' | translate }}</span>
+            <span *ngIf="project.category === 'personal'">✨ {{ 'projects.categories.personal' | translate }}</span>
+          </span>
+         <span class="project-link">
+  <span *ngIf="getVideoCount(project) > 0 && getImageCount(project) === 0">🎬 {{ 'projects.buttons.viewVideo' | translate }}</span>
+  <span *ngIf="getImageCount(project) > 0 && getVideoCount(project) === 0">📷 {{ getImageCount(project) }} {{ 'projects.buttons.viewImages' | translate }}</span>
+  <span *ngIf="getImageCount(project) > 0 && getVideoCount(project) > 0">🎞️ {{ getMediaCount(project) }} {{ 'projects.buttons.viewMedia' | translate }}</span>
+  <span *ngIf="getMediaCount(project) === 0">{{ 'projects.viewMore' | translate }}</span> →
+</span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="filteredProjects().length === 0" class="empty-state">
+      <span class="empty-icon">🔍</span>
+      <p>{{ 'projects.empty' | translate }}</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL / POPUP -->
+<div *ngIf="selectedProject() as project" class="modal-overlay" (click)="closeProject()">
+  <div class="modal-container" [attr.data-color]="project.color" (click)="$event.stopPropagation()">
+
+    <button class="modal-close" (click)="closeProject()" aria-label="Fermer">✕</button>
+
+    <!-- Header -->
+    <div class="modal-header">
+      <div class="modal-icon-wrapper">
+        <span class="modal-icon">{{ project.icon }}</span>
+      </div>
+      <div>
+        <span class="modal-period">{{ project.periodKey | translate }}</span>
+        <h2 class="modal-title">{{ project.titleKey | translate }}</h2>
+        <span class="modal-category" [attr.data-cat]="project.category">
+          <span *ngIf="project.category === 'professional'">💼 {{ 'projects.categories.pro' | translate }}</span>
+          <span *ngIf="project.category === 'academic'">🎓 {{ 'projects.categories.academic' | translate }}</span>
+          <span *ngIf="project.category === 'personal'">✨ {{ 'projects.categories.personal' | translate }}</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Galerie de médias (images + vidéos) -->
+    <div *ngIf="project.media && project.media.length > 0" class="modal-gallery">
+      <div class="gallery-main">
+        <button *ngIf="project.media.length > 1" class="gallery-nav prev" (click)="prevMedia()" aria-label="Précédent">‹</button>
+
+        <!-- Affichage image -->
+        <img *ngIf="project.media[currentMediaIndex()].type === 'image'"
+             [src]="project.media[currentMediaIndex()].src"
+             [alt]="project.titleKey | translate"
+             class="gallery-image">
+
+        <!-- Affichage vidéo -->
+        <video *ngIf="project.media[currentMediaIndex()].type === 'video'"
+               [src]="project.media[currentMediaIndex()].src"
+               class="gallery-video"
+               controls
+               autoplay
+               loop>
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+
+        <button *ngIf="project.media.length > 1" class="gallery-nav next" (click)="nextMedia()" aria-label="Suivant">›</button>
+        <div *ngIf="project.media.length > 1" class="gallery-counter">
+          {{ currentMediaIndex() + 1 }} / {{ project.media.length }}
+        </div>
+      </div>
+
+      <!-- Miniatures -->
+      <div *ngIf="project.media.length > 1" class="gallery-thumbs">
+        <div *ngFor="let item of project.media; let i = index"
+             class="thumb"
+             [class.active]="currentMediaIndex() === i"
+             (click)="setMediaIndex(i)">
+          <img *ngIf="item.type === 'image'" [src]="item.src" [alt]="'Aperçu ' + (i+1)">
+          <div *ngIf="item.type === 'video'" class="thumb-video">
+            <span class="play-icon">▶</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="modal-body">
+      <div class="modal-section">
+<h4 class="modal-section-title">📝 {{ 'projects.modal.description' | translate }}</h4>
+        <p class="modal-description">{{ project.descriptionKey | translate }}</p>
+      </div>
+
+      <div class="modal-section">
+<h4 class="modal-section-title">🛠️ {{ 'projects.modal.technologies' | translate }}</h4>
+        <div class="modal-tags">
+          <span *ngFor="let tag of project.tags" class="modal-tag">{{ tag }}</span>
+        </div>
+      </div>
+
+      <div *ngIf="project.link" class="modal-section">
+        <a [href]="project.link" target="_blank" class="modal-link-btn">
+          🔗 {{ 'projects.viewProject' | translate }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

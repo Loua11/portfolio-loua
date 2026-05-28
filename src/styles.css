@@ -1,0 +1,148 @@
+/* ============================================
+   GLOBAL STYLES - Portfolio Loua Jday
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ----- Variables globales (couleurs, espacements) ----- */
+:root {
+  /* Couleurs principales */
+  --primary: #534AB7;        /* Violet */
+  --primary-light: #EEEDFE;
+  --primary-dark: #3C3489;
+
+  --secondary: #1D9E75;      /* Turquoise */
+  --secondary-light: #E1F5EE;
+  --secondary-dark: #0F6E56;
+
+  --accent: #D85A30;         /* Corail */
+  --accent-light: #FAECE7;
+  --accent-dark: #993C1D;
+
+  --pink: #D4537E;           /* Rose */
+  --pink-light: #FBEAF0;
+  --pink-dark: #993556;
+  
+  /* Blockchain — bleu nuit/violet profond */
+--blockchain: #2D5BFF;
+--blockchain-light: #E1E9FE;
+--blockchain-dark: #1A3FBF;
+
+  /* Neutres */
+  --bg: #FAFAFA;
+  --bg-white: #FFFFFF;
+  --text-primary: #1A1A1A;
+  --text-secondary: #5F5F5F;
+  --text-light: #888888;
+  --border: rgba(0, 0, 0, 0.08);
+
+  /* Typo */
+  --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Ombres */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+  /* Bordures arrondies */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+  /* Container */
+  --container-max: 1200px;
+  --container-padding: 24px;
+}
+
+/* ----- Reset CSS ----- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: var(--font-main);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ----- Utilitaire container ----- */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* ----- Sections ----- */
+section {
+  padding: 80px 0;
+}
+
+section h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: var(--text-primary);
+}
+
+/* ----- Scrollbar custom (style coloré) ----- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* ----- Animation au scroll (pour plus tard avec GSAP) ----- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

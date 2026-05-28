@@ -1,0 +1,54 @@
+<section class="experience-section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-subtitle">{{ 'experience.sectionNumber' | translate }} — {{ 'experience.title' | translate }}</span>
+      <h2 class="section-title">{{ 'experience.title' | translate }}</h2>
+    </div>
+
+    <div class="experience-list">
+      <div *ngFor="let exp of experiences" class="experience-card" [attr.data-color]="exp.color">
+
+        <!-- Header de la carte -->
+        <div class="exp-header">
+          <div class="exp-icon-wrapper">
+            <span class="exp-icon">{{ exp.icon }}</span>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-period">📅 {{ exp.periodKey | translate }}</span>
+            <h3 class="exp-title">{{ exp.titleKey | translate }}</h3>
+            <p class="exp-company">
+              <span class="company-icon">🏢</span>
+              <strong>{{ exp.companyKey | translate }}</strong>
+              <span class="exp-location">• {{ exp.locationKey | translate }}</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Description principale -->
+        <p class="exp-description">{{ exp.descriptionKey | translate }}</p>
+
+        <!-- Réalisations -->
+        <div class="exp-section">
+          <h4 class="exp-section-title">🎯 {{ 'experience.achievementsLabel' | translate }}</h4>
+          <ul class="exp-achievements">
+            <li *ngFor="let achievement of exp.achievements">
+              <span class="check">✓</span>
+              {{ achievement | translate }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Technologies -->
+        <div class="exp-section">
+          <h4 class="exp-section-title">🛠️ {{ 'experience.techsLabel' | translate }}</h4>
+          <div class="exp-techs">
+            <span *ngFor="let tech of exp.techs" class="exp-tech">{{ tech }}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

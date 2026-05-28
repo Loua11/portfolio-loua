@@ -1,0 +1,35 @@
+<section class="education-section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-subtitle">{{ 'education.sectionNumber' | translate }} — {{ 'education.title' | translate }}</span>
+      <h2 class="section-title">{{ 'education.title' | translate }}</h2>
+    </div>
+
+    <div class="timeline">
+      @for (edu of educations; track edu.titleKey) {
+        <div class="timeline-item" [class.current]="edu.current">
+          <div class="timeline-dot">
+            @if (edu.current) {
+              <div class="pulse-ring"></div>
+            }
+          </div>
+          <div class="timeline-content">
+            @if (edu.current) {
+              <span class="current-badge">🟢 {{ 'education.current' | translate }}</span>
+            }
+            <span class="timeline-period">{{ edu.periodKey | translate }}</span>
+            <h3 class="timeline-title">{{ edu.titleKey | translate }}</h3>
+            <p class="timeline-school">
+              <span class="school-icon">🎓</span>
+              {{ edu.schoolKey | translate }}
+            </p>
+            <p class="timeline-location">{{ edu.locationKey | translate }} {{ edu.flag }}</p>
+            <p class="timeline-description">{{ edu.descriptionKey | translate }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

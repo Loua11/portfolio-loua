@@ -1,0 +1,233 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "education": "Education",
+      "experience": "Experience",
+
+    "projects": "Projects",
+    "contact": "Contact",
+    "downloadCV": "Download CV"
+  },
+ "hero": {
+  "greeting": "Hi, I'm",
+  "name": "Loua Jday",
+  "title": "Software Engineer",
+  "subtitle": "Web Development & DevOps",
+  "description": "Computer Engineering graduate from ESPRIT 🎓, currently in the Freemover program at Philipps University of Marburg 🇩🇪. Passionate about Java, Spring Boot, Angular and CI/CD, I'm actively looking for a software development role and open to relocation across Germany.",
+  "viewProjects": "View my projects",
+  "contactMe": "Contact me",
+  "available": "🟢 Available immediately • Open to relocation",
+  "scroll": "Scroll"
+},
+  "about": {
+    "title": "About me",
+    "sectionNumber": "01",
+    "tabs": {
+      "presentation": "Introduction",
+      "languages": "Languages",
+      "softSkills": "Soft skills",
+      "certifications": "Certifications"
+    },
+    "presentation": "Software engineering graduate from ESPRIT, passionate about web development and DevOps. Currently in the Freemover program at Philipps University of Marburg (Germany), I master Java, Spring Boot, Angular and CI/CD tools. Serious, motivated and an effective team player — available immediately for a position in Germany.",
+   "info": {
+  "location": "Location",
+  "locationValue": "Marburg, Germany",
+  "status": "Status",
+  "statusValue": "Graduate Engineer • Available",
+  "experience": "Experience",
+  "experienceValue": "5+ years",
+  "email": "Email"
+},
+    "languagesList": {
+      "arabic": "Arabic",
+      "arabicLevel": "Native speaker",
+      "french": "French",
+      "frenchLevel": "TCF certified",
+      "english": "English",
+      "englishLevel": "Fluent",
+      "german": "German",
+      "germanLevel": "Learning"
+    },
+    "softSkillsList": {
+      "teamwork": "Teamwork",
+      "teamworkDesc": "Excellent collaboration and communication",
+      "motivation": "Motivation",
+      "motivationDesc": "Serious, motivated and effective",
+      "curiosity": "Curiosity",
+      "curiosityDesc": "Always learning new technologies",
+      "problemSolving": "Problem solving",
+      "problemSolvingDesc": "Analytical and creative approach",
+      "multicultural": "Multicultural",
+      "multiculturalDesc": "Experience in Tunisia & Germany",
+      "timeManagement": "Time management",
+      "timeManagementDesc": "Meeting deadlines and priorities"
+    },
+    "certificationsList": {
+      "sdg": "SDG Certificate",
+      "sdgIssuer": "Coursera",
+      "sdgDate": "December 2024",
+      "commercial": "Commercial Representative",
+      "commercialIssuer": "LinkedIn Learning",
+      "commercialDate": "June 2022",
+      "tcf": "TCF French",
+      "tcfIssuer": "France Education",
+      "tcfDate": "February 2022"
+    }
+  },
+ "skills": {
+  "title": "Skills",
+  "sectionNumber": "02",
+    "hint": "Hover over a skill to see the level",
+
+  "backend": "Backend",
+  "frontend": "Frontend",
+  "devops": "DevOps",
+  "database": "Databases",
+  "blockchain": "Blockchain",
+    "tools": "Tools & Methods"
+
+},
+  "education": {
+    "title": "Education & Training",
+    "sectionNumber": "03",
+    "current": "Current",
+    "marburg": {
+      "title": "Engineering Cycle — Academic Mobility",
+      "school": "Philipps University of Marburg",
+      "location": "Marburg, Germany",
+      "period": "Oct. 2025 — Sept. 2026",
+      "description": "Freemover program — Specialization in software engineering and distributed systems."
+    },
+    "esprit": {
+      "title": "Computer Engineering Degree",
+      "school": "ESPRIT — Private Higher School of Engineering",
+      "location": "Ariana, Tunisia",
+      "period": "Sept. 2022 — Dec. 2025",
+      "description": "Software engineering — DevOps, full-stack web development, blockchain, micro-services architecture."
+    },
+    "iset": {
+      "title": "Higher Technician in Industrial Computing",
+      "school": "Higher Institute of Technological Studies",
+      "location": "Nabeul, Tunisia",
+      "period": "Sept. 2015 — June 2018",
+      "description": "Technical training in industrial computing, automation and supervision."
+    }
+  },
+  "experience": {
+  "title": "Work Experience",
+  "sectionNumber": "04",
+  "achievementsLabel": "Key achievements",
+  "techsLabel": "Technologies used",
+  "md": {
+    "title": "Full-Stack Web Developer",
+    "company": "MD Company",
+    "location": "Tunis, Tunisia",
+    "period": "January 2019 — January 2022 • 3 years",
+    "description": "Full-stack web application development within the IT department of MD Company: design, implementation and optimization of business platforms used by internal teams.",
+    "achievements": [
+      "Design and development of multiple business web applications using Java/Spring Boot and Angular",
+      "Implementation of secure REST APIs documented with Swagger",
+      "Performance optimization and refactoring of existing modules",
+      "Collaboration with product teams and participation in code reviews"
+    ]
+  }
+},
+ "projects": {
+  "title": "Projects",
+  "sectionNumber": "05",
+  "hint": "Click on a project to learn more",
+  "viewProject": "View project",
+  "viewMore": "View more",
+  "filters": {
+    "all": "All",
+    "professional": "Professional",
+    "academic": "Academic",
+    "personal": "Personal"
+  },
+  "categories": {
+    "pro": "Pro",
+    "academic": "Academic",
+    "personal": "Personal"
+  },
+  "buttons": {
+    "viewVideo": "Watch video",
+    "viewImages": "images",
+    "viewMedia": "media"
+  },
+  "modal": {
+    "description": "Description",
+    "technologies": "Technologies used"
+  },
+  "empty": "No projects in this category yet.",
+  "docchain": {
+    "title": "DocChain",
+    "description": "Ethereum-based blockchain solution: development of secure smart contracts, Angular front-end and Spring Boot back-end, DevOps approach.",
+    "period": "March — Nov. 2025"
+  },
+  "kaddem": {
+    "title": "DevOps Infrastructure — KADDEM",
+    "description": "Implementation of a complete CI/CD pipeline integrating Jenkins, SonarQube, Nexus, Docker Hub, Grafana and Prometheus.",
+    "period": "Sept. — Nov. 2024"
+  },
+  "courzelo": {
+    "title": "COURZELO",
+    "description": "Complete online learning platform with course management, users and progress tracking.",
+    "period": "Jan. — May 2024"
+  },
+  "agroeasy": {
+    "title": "AgroEasy",
+    "description": "Web (Symfony) and mobile/desktop application for the management and monitoring of agricultural crops with real-time dashboards.",
+    "period": "Jan. — May 2023"
+  },
+  "ecommerce": {
+    "title": "E-commerce Website",
+    "description": "Development of a complete e-commerce site with Symfony 5: cart, payment, product and user management.",
+    "period": "Summer 2024"
+  },
+  "mobility": {
+    "title": "International Mobility — ESPRIT",
+    "description": "International mobility website: user management, opportunities search and filtering, automated registrations.",
+    "period": "Summer 2023"
+  },
+  "supervision": {
+    "title": "Automated Supervision",
+    "description": "Final project with TIA Portal: automated supervision system for production machines, optimization and error reduction.",
+    "period": "Feb. — June 2018"
+  },
+  "md": {
+    "title": "Web Applications — MD Company",
+    "description": "Full-stack web application development with Spring Boot and Angular: design, implementation and optimization.",
+    "period": "2019 — 2022"
+  }
+},
+  "contact": {
+    "title": "Contact me",
+    "sectionNumber": "06",
+    "subtitle": "A project? Hiring? Just want to say hi?",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Your email",
+    "emailPlaceholder": "example@email.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Message subject",
+    "message": "Message",
+    "messagePlaceholder": "Your message...",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Please fill in the email and message",
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "locationValue": "Marburg, Germany"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "tagline": "Software engineer passionate about web development & DevOps",
+    "madeWith": "Designed with",
+    "in": "in Marburg"
+  }
+}
