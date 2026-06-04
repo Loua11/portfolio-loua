@@ -1,7 +1,6 @@
-import { Component, signal, inject, HostListener } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
-import { TranslationService } from '../../services/translation';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -11,50 +10,50 @@ import { TranslationService } from '../../services/translation';
   styleUrl: './header.css'
 })
 export class Header {
-  translationService = inject(TranslationService);
+  private translate = inject(TranslateService);
 
-  isScrolled = signal(false);
   isMenuOpen = signal(false);
-  isLangDropdownOpen = signal(false);
+  isLangOpen = signal(false);
+  currentLang = signal('fr');
 
-  @HostListener('window:scroll')
-  onScroll() {
-    this.isScrolled.set(window.scrollY > 50);
-  }
+  languages = [
+    { code: 'fr', label: 'FR', flag: '🇫🇷' },
+    { code: 'en', label: 'EN', flag: '🇬🇧' },
+    { code: 'de', label: 'DE', flag: '🇩🇪' }
+  ];
 
   toggleMenu() {
     this.isMenuOpen.update(v => !v);
   }
 
-  closeMenu() {
+  toggleLang() {
+    this.isLangOpen.update(v => !v);
+  }
+
+  selectLang(code: string) {
+    this.currentLang.set(code);
+    this.translate.use(code);
+    this.isLangOpen.set(false);
+  }
+
+  scrollTo(section: string) {
+    document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
     this.isMenuOpen.set(false);
   }
 
-  toggleLangDropdown(event: Event) {
-    event.stopPropagation();
-    this.isLangDropdownOpen.update(v => !v);
+  // 🆕 Retourne le bon chemin du CV selon la langue active
+  getCvPath(): string {
+    const lang = this.currentLang();
+    if (lang === 'en') return 'cv/CV-Loua-Jday-EN.pdf';
+    if (lang === 'de') return 'cv/CV-Loua-Jday-EN.pdf';   // pour l'instant DE pointe vers EN
+    return 'cv/CV-Loua-Jday-FR.pdf';  // par défaut FR
   }
 
-  switchLanguage(lang: string, event: Event) {
-    event.stopPropagation();
-    this.translationService.switchLanguage(lang);
-    this.isLangDropdownOpen.set(false);
-  }
-
-  get currentLanguage() {
-    return this.translationService.getCurrentLanguage();
-  }
-
-  get currentLangCode() {
-    return this.translationService.currentLang();
-  }
-
-  scrollTo(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    this.closeMenu();
-    this.isLangDropdownOpen.set(false);
+  // 🆕 Retourne le bon nom de téléchargement
+  getCvName(): string {
+    const lang = this.currentLang();
+    if (lang === 'en') return 'CV-Loua-Jday-EN.pdf';
+    if (lang === 'de') return 'CV-Loua-Jday-EN.pdf';
+    return 'CV-Loua-Jday-FR.pdf';
   }
 }

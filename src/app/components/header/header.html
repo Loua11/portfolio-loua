@@ -44,7 +44,7 @@
       </div>
 
       <!-- Bouton CV -->
-<a href="cv/CV-Loua-Jday.pdf" download="CV-Loua-Jday.pdf" class="btn-cv">
+<a [href]="getCvPath()" [download]="getCvName()" class="btn-cv">
           <i class="fas fa-download"></i>
         <span>{{ 'nav.downloadCV' | translate }}</span>
       </a>
