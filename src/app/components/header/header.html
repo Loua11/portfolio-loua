@@ -23,8 +23,8 @@
       <!-- Sélecteur de langue -->
       <div class="lang-selector">
         <button class="lang-btn" (click)="toggleLangDropdown($event)">
-          <span class="flag">{{ currentLanguage?.flag }}</span>
-          <span class="lang-code">{{ currentLangCode.toUpperCase() }}</span>
+          <span class="flag">{{ currentLanguage()?.flag }}</span>
+          <span class="lang-code">{{ currentLangCode().toUpperCase() }}</span>
           <span class="arrow" [class.open]="isLangDropdownOpen()">▾</span>
         </button>
 
@@ -33,7 +33,7 @@
             @for (lang of translationService.availableLanguages; track lang.code) {
               <button
                 class="lang-option"
-                [class.active]="lang.code === currentLangCode"
+                [class.active]="lang.code === currentLangCode()"
                 (click)="switchLanguage(lang.code, $event)">
                 <span class="flag">{{ lang.flag }}</span>
                 <span>{{ lang.label }}</span>
